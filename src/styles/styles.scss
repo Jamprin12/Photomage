@@ -1,0 +1,13 @@
+$primary: #009330;
+$text: #000;
+$white: #fff;
+
+body {
+  font-family: "Nunito", sans-serif;
+  color: $text;
+}
+
+.navbar {
+  background-color: $primary;
+  font-weight: 600;
+}
