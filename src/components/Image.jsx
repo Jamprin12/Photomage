@@ -12,14 +12,14 @@ export default function Image({
     <div className="card image m-4 is-half">
       <div className="card-image">
         <figure className="image is-4by3">
-          <img src={url} loading="lazy" alt={alt_description} />
+          <img src={url} alt={alt_description} />
         </figure>
       </div>
       <div className="card-content">
         <div className="media">
           <div className="media-left">
             <figure className="image is-48x48">
-              <img src={authorImage} />
+              <img src={authorImage} alt={author} />
             </figure>
           </div>
           <div className="media-content">
