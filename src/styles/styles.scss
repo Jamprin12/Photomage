@@ -1,6 +1,10 @@
-$primary: #d10e0e;
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;600;800&display=swap");
+
+$primary: #0ed15f;
 $text: #000;
 $white: #fff;
+$raninbow: rainbow-bg 200s linear infinite;
 $radius: 5px;
 
 body {
@@ -14,9 +18,9 @@ body {
   background-color: $primary;
   font-weight: 600;
   .navbar-brand .navbar-item {
-    font-weight: 800;
+    font-family: "Pacifico", cursive;
     font-size: 3em !important;
-    letter-spacing: 3px;
+    // letter-spacing: 3px;
   }
   .navbar-menu .navbar-item {
     border-radius: $radius;
@@ -53,6 +57,20 @@ body {
 .upload {
   border-radius: $radius;
   overflow: hidden;
+  .button {
+    background-color: $primary;
+    color: $white;
+  }
+  .file {
+    .file-cta {
+      width: 100% !important;
+      display: flex;
+      span {
+        justify-content: center;
+        text-align: center;
+      }
+    }
+  }
   .card-header {
     background-color: $primary;
     .card-header-title {

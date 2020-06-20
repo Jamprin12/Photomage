@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;600;800&display=swap");
 body {
   font-family: "Nunito", sans-serif;
   color: #000;
@@ -5,13 +7,12 @@ body {
 
 /* Nav Bar */
 .navbar {
-  background-color: #d10e0e;
+  background-color: #0ed15f;
   font-weight: 600;
 }
 .navbar .navbar-brand .navbar-item {
-  font-weight: 800;
+  font-family: "Pacifico", cursive;
   font-size: 3em !important;
-  letter-spacing: 3px;
 }
 .navbar .navbar-menu .navbar-item {
   border-radius: 5px;
@@ -19,7 +20,7 @@ body {
 }
 .navbar .navbar-menu .navbar-item:hover, .navbar .navbar-menu .navbar-item:focus {
   transition: 0.3s;
-  color: #d10e0e !important;
+  color: #0ed15f !important;
 }
 
 /* Image Grid */
@@ -44,8 +45,20 @@ body {
   border-radius: 5px;
   overflow: hidden;
 }
+.upload .button {
+  background-color: #0ed15f;
+  color: #fff;
+}
+.upload .file .file-cta {
+  width: 100% !important;
+  display: flex;
+}
+.upload .file .file-cta span {
+  justify-content: center;
+  text-align: center;
+}
 .upload .card-header {
-  background-color: #d10e0e;
+  background-color: #0ed15f;
 }
 .upload .card-header .card-header-title {
   color: #fff;

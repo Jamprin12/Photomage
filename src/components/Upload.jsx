@@ -8,7 +8,7 @@ export default function Upload() {
   const handleChange = (e) => {
     if (e.target.files[0]) {
       setPhoto(e.target.files[0]);
-      console.log(photo)
+      console.log(photo);
     }
   };
   const handleUpload = () => {
@@ -49,10 +49,10 @@ export default function Upload() {
           </div>
         </div>
 
-        <div className="file">
+        <div className="file is-fullwidth">
           <label className="file-label">
             <input
-              className="file-input is-fullwidth"
+              className="file-input"
               onChange={handleChange}
               type="file"
               name="resume"
@@ -68,10 +68,7 @@ export default function Upload() {
 
         <div className="field is-fullwidth mt-3">
           <div className="control">
-            <button
-              onClick={handleUpload}
-              className="button is-link is-fullwidth"
-            >
+            <button onClick={handleUpload} className="button is-fullwidth">
               Upload
             </button>
           </div>
