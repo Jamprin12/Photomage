@@ -9,18 +9,17 @@ export default function Nav() {
           PhotoMage
         </Link>
         <a
+          className="navbar-burger burger has-text-white-bis"
           role="button"
-          classNamne="avbar-burger burger has-text-white-bis"
           aria-label="menu"
           aria-expanded="false"
           data-target="navbarBasicExample"
-        >
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
+        />
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
       </div>
 
-      <div id="navbarBasicExample" class="navbar-menu">
+      <div id="navbarBasicExample" className="navbar-menu">
         <div className="navbar-end px-4">
           <Link
             className="navbar-item has-text-white-bis is-size-4 mx-3"

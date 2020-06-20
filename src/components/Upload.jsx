@@ -3,43 +3,43 @@ import React from "react";
 export default function Upload() {
   return (
     <div className="upload card mt-6">
-      <div class="card-header">
-        <p class="card-header-title">Upload Images</p>
+      <div className="card-header">
+        <p className="card-header-title">Upload Images</p>
       </div>
       <div className="card-content">
-        <div class="field">
-          <label class="label">Name</label>
-          <div class="control">
-            <input class="input" type="text" placeholder="Text input" />
+        <div className="field">
+          <label className="label">Name</label>
+          <div className="control">
+            <input className="input" type="text" placeholder="Text input" />
           </div>
         </div>
 
-        <div class="field">
-          <label class="label">Description</label>
-          <div class="control">
-            <textarea class="textarea" placeholder="Textarea"></textarea>
+        <div className="field">
+          <label className="label">Description</label>
+          <div className="control">
+            <textarea className="textarea" placeholder="Textarea"></textarea>
           </div>
         </div>
 
-        <div class="file">
-          <label class="file-label">
+        <div className="file">
+          <label className="file-label">
             <input
-              class="file-input is-fullwidth"
+              className="file-input is-fullwidth"
               type="submit"
               name="resume"
             />
-            <span class="file-cta">
-              <span class="file-icon">
-                <i class="fas fa-upload"></i>
+            <span className="file-cta">
+              <span className="file-icon">
+                <i className="fas fa-upload"></i>
               </span>
-              <span class="file-label">Choose a file…</span>
+              <span className="file-label">Choose a file…</span>
             </span>
           </label>
         </div>
 
-        <div class="field is-fullwidth mt-3">
-          <div class="control">
-            <button class="button is-link is-fullwidth">Upload</button>
+        <div className="field is-fullwidth mt-3">
+          <div className="control">
+            <button className="button is-link is-fullwidth">Upload</button>
           </div>
         </div>
       </div>
