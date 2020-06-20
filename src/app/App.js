@@ -1,8 +1,8 @@
 import React from "react";
-import "./styles.css";
+import "../styles/styles.css";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { ImageGrid, Nav } from "./components/index";
+import { ImageGrid, Nav } from "../components/index";
 
 function App() {
   return (

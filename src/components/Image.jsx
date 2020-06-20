@@ -9,7 +9,7 @@ export default function Image({
   description,
 }) {
   return (
-    <div className="card m-4 is-half">
+    <div className="card image m-4 is-half">
       <div className="card-image">
         <figure className="image is-4by3">
           <img src={url} loading="lazy" alt={alt_description} />

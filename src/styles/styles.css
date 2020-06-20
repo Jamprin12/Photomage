@@ -3,9 +3,40 @@ body {
   color: #000;
 }
 
+/* Nav Bar */
 .navbar {
-  background-color: #009330;
+  background-color: #d10e0e;
   font-weight: 600;
+}
+.navbar .navbar-brand .navbar-item {
+  font-weight: 800;
+  font-size: 3em !important;
+  letter-spacing: 3px;
+}
+.navbar .navbar-menu .navbar-item {
+  border-radius: 5px;
+  font-size: 300px;
+}
+.navbar .navbar-menu .navbar-item:hover, .navbar .navbar-menu .navbar-item:focus {
+  transition: 0.3s;
+  color: #d10e0e !important;
+}
+
+/* Image Grid */
+.images-grid {
+  display: grid;
+  grid-row-gap: 2.3em;
+  grid-auto-flow: columns;
+  grid-column-gap: 66px;
+  grid-template-columns: repeat(auto-fill, 270px);
+  justify-content: center;
+  padding: 3em 0;
+}
+
+/* Image */
+.image {
+  overflow: hidden;
+  border-radius: 5px;
 }
 
 /*# sourceMappingURL=styles.css.map */
