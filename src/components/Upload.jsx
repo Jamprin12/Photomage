@@ -55,6 +55,7 @@ export default function Upload() {
               onChange={handleChange}
               type="file"
               name="resume"
+              required="required"
             />
             <span className="file-cta">
               <span className="file-icon">
@@ -75,6 +76,7 @@ export default function Upload() {
               type="text"
               placeholder="Name Author"
               value={name}
+              required="required"
             />
           </div>
         </div>
@@ -88,6 +90,7 @@ export default function Upload() {
               }}
               placeholder="Description"
               value={description}
+              required="required"
             ></textarea>
           </div>
         </div>

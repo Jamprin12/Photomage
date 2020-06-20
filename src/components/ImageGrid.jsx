@@ -1,34 +1,41 @@
 import React, { useState, useEffect } from "react";
 import Image from "./Image";
-import { getData } from "../services/api";
+import { db } from "../services/firebase";
 
 export default function ImageGrid() {
-  const [images, setImages] = useState([]);
+  const [photos, setPhotos] = useState([]);
 
   useEffect(() => {
-    async function setData() {
-      const data = await getData();
-      setImages(data);
-      return data;
-    }
-    setData();
-  }, []);
-  
+    db.collection("Photos")
+      .get()
+      .then((snapshot) => {
+        const photos_temp = [];
+
+        snapshot.forEach((doc) => {
+          const data = doc.data();
+          photos_temp.push(data);
+        });
+
+        setPhotos(photos_temp);
+      })
+      .catch((error) => console.log(error));
+  }, [photos]);
+
   return (
     <div className="images-grid my-4">
-      {images.map(
-        ({ id, urls, user, update_at, alt_description, description }) => (
-          <Image
-            key={id}
-            url={urls.raw}
-            author={user.name}
-            authorImage={user.profile_image.large}
-            create_at={update_at}
-            alt_description={alt_description}
-            description={description}
-          ></Image>
-        )
-      )}
+      {photos.map((
+        { id, url, name, description } // alt_description, // update_at,
+      ) => (
+        <Image
+          key={id}
+          url={url}
+          author={name}
+          // authorImage={user.profile_image.large}
+          // create_at={update_at}
+          // alt_description={alt_description}
+          description={description}
+        ></Image>
+      ))}
     </div>
   );
 }
