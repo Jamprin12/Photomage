@@ -2,7 +2,7 @@ import React from "react";
 import "../styles/styles.css";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { ImageGrid, Nav } from "../components/index";
+import { ImageGrid, Nav, Upload } from "../components/index";
 
 function App() {
   return (
@@ -15,7 +15,9 @@ function App() {
             <Route exact path="/">
               <ImageGrid></ImageGrid>
             </Route>
-            <Route path="/upload"></Route>
+            <Route path="/upload">
+              <Upload></Upload>
+            </Route>
           </Switch>
         </div>
       </div>

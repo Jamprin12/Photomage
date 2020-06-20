@@ -1,6 +1,7 @@
 $primary: #d10e0e;
 $text: #000;
 $white: #fff;
+$radius: 5px;
 
 body {
   font-family: "Nunito", sans-serif;
@@ -18,7 +19,7 @@ body {
     letter-spacing: 3px;
   }
   .navbar-menu .navbar-item {
-    border-radius: 5px;
+    border-radius: $radius;
     font-size: 300px;
     &:hover,
     &:focus {
@@ -44,5 +45,19 @@ body {
 
 .image {
   overflow: hidden;
-  border-radius: 5px;
+  border-radius: $radius;
+}
+
+/* Upload Form*/
+
+.upload {
+  border-radius: $radius;
+  overflow: hidden;
+  .card-header {
+    background-color: $primary;
+    .card-header-title {
+      color: $white;
+      font-size: 2em;
+    }
+  }
 }

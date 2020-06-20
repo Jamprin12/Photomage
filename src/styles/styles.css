@@ -39,4 +39,17 @@ body {
   border-radius: 5px;
 }
 
+/* Upload Form*/
+.upload {
+  border-radius: 5px;
+  overflow: hidden;
+}
+.upload .card-header {
+  background-color: #d10e0e;
+}
+.upload .card-header .card-header-title {
+  color: #fff;
+  font-size: 2em;
+}
+
 /*# sourceMappingURL=styles.css.map */
