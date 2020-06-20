@@ -1,6 +1,34 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { storage } from "../services/firebase";
 
 export default function Upload() {
+  const [photo, setPhoto] = useState(null);
+  // useEffect(() => {}, []);
+
+  const handleChange = (e) => {
+    if (e.target.files[0]) {
+      setPhoto(e.target.files[0]);
+      console.log(photo)
+    }
+  };
+  const handleUpload = () => {
+    const uploadTask = storage.ref(`photos/${photo.name}`).put(photo);
+    uploadTask.on(
+      "state_changed",
+      (snapshot) => {},
+      (error) => {
+        console.log(error);
+      },
+      () => {
+        storage
+          .ref("photos")
+          .child(photo.name)
+          .getDownloadURL()
+          .then((url) => {});
+      }
+    );
+  };
+
   return (
     <div className="upload card mt-6">
       <div className="card-header">
@@ -25,7 +53,8 @@ export default function Upload() {
           <label className="file-label">
             <input
               className="file-input is-fullwidth"
-              type="submit"
+              onChange={handleChange}
+              type="file"
               name="resume"
             />
             <span className="file-cta">
@@ -39,7 +68,12 @@ export default function Upload() {
 
         <div className="field is-fullwidth mt-3">
           <div className="control">
-            <button className="button is-link is-fullwidth">Upload</button>
+            <button
+              onClick={handleUpload}
+              className="button is-link is-fullwidth"
+            >
+              Upload
+            </button>
           </div>
         </div>
       </div>
