@@ -9,9 +9,11 @@ export default function ImageGrid() {
     async function setData() {
       const data = await getData();
       setImages(data);
+      return data;
     }
     setData();
   }, []);
+  
   return (
     <div className="images-grid my-4">
       {images.map(

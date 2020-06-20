@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { storage } from "../services/firebase";
+import { storage, db } from "../services/firebase";
 
 export default function Upload() {
   const [photo, setPhoto] = useState(null);
-  // useEffect(() => {}, []);
+  const [description, setDescription] = useState("");
+  const [name, setName] = useState("");
 
   const handleChange = (e) => {
     if (e.target.files[0]) {
@@ -24,9 +25,21 @@ export default function Upload() {
           .ref("photos")
           .child(photo.name)
           .getDownloadURL()
-          .then((url) => {});
+          .then((url) => {
+            const data = {
+              url,
+              name,
+              description,
+            };
+            const photos = db.collection("Photos");
+            photos.add(data);
+            console.log(photos);
+          });
       }
     );
+    setDescription("");
+    setName("");
+    setPhoto(null);
   };
 
   return (
@@ -35,20 +48,6 @@ export default function Upload() {
         <p className="card-header-title">Upload Images</p>
       </div>
       <div className="card-content">
-        <div className="field">
-          <label className="label">Name</label>
-          <div className="control">
-            <input className="input" type="text" placeholder="Text input" />
-          </div>
-        </div>
-
-        <div className="field">
-          <label className="label">Description</label>
-          <div className="control">
-            <textarea className="textarea" placeholder="Textarea"></textarea>
-          </div>
-        </div>
-
         <div className="file is-fullwidth">
           <label className="file-label">
             <input
@@ -64,6 +63,33 @@ export default function Upload() {
               <span className="file-label">Choose a file…</span>
             </span>
           </label>
+        </div>
+
+        <div className="field mt-4">
+          <div className="control">
+            <input
+              className="input"
+              onChange={(e) => {
+                setName(e.target.value);
+              }}
+              type="text"
+              placeholder="Name Author"
+              value={name}
+            />
+          </div>
+        </div>
+
+        <div className="field mt-4">
+          <div className="control">
+            <textarea
+              className="textarea"
+              onChange={(e) => {
+                setDescription(e.target.value);
+              }}
+              placeholder="Description"
+              value={description}
+            ></textarea>
+          </div>
         </div>
 
         <div className="field is-fullwidth mt-3">
